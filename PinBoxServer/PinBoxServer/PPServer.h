@@ -10,7 +10,7 @@
 #include <iostream>
 
 // evpp
-#include <glog/config.h>
+//#include <glog/config.h>
 #include <evpp/tcp_server.h>
 #include <evpp/buffer.h>
 #include <evpp/tcp_conn.h>

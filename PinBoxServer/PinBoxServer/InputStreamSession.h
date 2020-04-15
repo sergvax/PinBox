@@ -48,6 +48,12 @@ struct KeyMappingProfile
 	bool									circlePadAsMouse = false;
 	bool									ZLRAsMouseButton = false;
 	std::string								type = "";
+	//add c-stick calibration
+	std::int16_t cStickUp = 0;
+	std::int16_t cStickDown = 0;
+	std::int16_t cStickRight = 0;
+	std::int16_t cStickLeft = 0;
+
 };
 
 class InputStreamSession

@@ -93,9 +93,42 @@ void InputStreamSession::LoadInputConfig()
 		{
 			continue;
 		}
-
+		//inputProfiles[i].lookupValue("type", type);
 		profile->name = name;
 		profile->type = type;
+
+		// c-stick calibration in percent - 
+		//example - 
+		//"20" -plus 20 percent power
+		//"-20" - minus 20 percent power
+		/*cStickUp = 20;
+		cStickDown = 0;
+		cStickRight = 0;
+		cStickLeft = 0;*/
+		//bool circle_as_mouse, zl_zr_as_mouse_btn;
+		int cStick;
+		//currenProfile = inputProfiles[i]; 
+		//std::string typeOfArrayElement = typeid(inputProfiles[i]).name();
+		//const libconfig::Setting& currenProfile = inputProfiles[i];
+		if (inputProfiles[i].lookupValue("cStickUp", cStick))
+		{
+			m_defaultProfile ->cStickUp = cStick;
+		}
+		if (inputProfiles[i].lookupValue("cStickDown", cStick))
+		{
+			m_defaultProfile->cStickDown = cStick;
+		}
+		if (inputProfiles[i].lookupValue("cStickRight", cStick))
+		{
+			m_defaultProfile->cStickRight = cStick;
+		}
+		if (inputProfiles[i].lookupValue("cStickLeft", cStick))
+		{
+			m_defaultProfile->cStickLeft = cStick;
+		}
+		/*std::string btn_A0;
+		inputProfiles[i].lookupValue("btn_A", btn_A0);
+		*///inputProfiles[i].lookupValue("cStickUp", cStickUp);
 
 		if(type == "keyboard")
 		{
@@ -260,7 +293,8 @@ void InputStreamSession::ProcessInput()
 		}
 
 		const short MAX_STICK_RANGE = 30000;
-		const float ADDITION_CSTICK = 0.2f;
+		const float ADDITION_CSTICK = 0.0f;// 0.2f;
+		//const float ADDITION_CSTICK = profile->cStickUp /100;
 
 		// Left stick
 		if (m_OldCX > 0 && m_OldCX <= c_cpadDeadZone) m_OldCX = 0;
@@ -288,6 +322,15 @@ void InputStreamSession::ProcessInput()
 
 		float pCtx = (static_cast<float>(m_OldCTX) / static_cast<float>(c_cpadMax)) + ADDITION_CSTICK;
 		float pCty = (static_cast<float>(m_OldCTY) / static_cast<float>(c_cpadMax)) + ADDITION_CSTICK;
+		
+		//add c-stick calibration
+		if (pCty < 0) pCty = pCty - (float)profile->cStickDown / 100;//0.4f; //down
+		if (pCtx < 0) pCtx = pCtx - (float)profile->cStickLeft / 100; //0.2f; //left
+
+		if (pCty > 0) pCty = pCty + (float)profile->cStickUp / 100; //0.4f; //up
+		if (pCtx > 0) pCtx = pCtx + (float)profile->cStickRight / 100;//0.2f; //right
+
+		
 		
 		int newCTX = (int)(pCtx * MAX_STICK_RANGE);
 		int newCTY = (int)(pCty * MAX_STICK_RANGE);

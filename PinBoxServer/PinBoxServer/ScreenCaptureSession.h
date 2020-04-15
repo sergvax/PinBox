@@ -9,12 +9,12 @@
 #include "PPClientSession.h"
 
 //encode
-#include "webp/encode.h"
-#include <turbojpeg.h>
-#include <opencv2/core.hpp>
-#include <opencv2/imgcodecs.hpp>
-#include <opencv2/highgui.hpp>
-#include <opencv2/opencv.hpp>
+//#include "webp/encode.h"
+//#include <turbojpeg.h>
+//#include <opencv2/core.hpp>
+//#include <opencv2/imgcodecs.hpp>
+//#include <opencv2/highgui.hpp>
+//#include <opencv2/opencv.hpp>
 #include "AudioStreamSession.h"
 #include <thread>
 

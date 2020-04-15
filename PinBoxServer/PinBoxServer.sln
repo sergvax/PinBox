@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30002.166
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PinBoxServer", "PinBoxServer\PinBoxServer.vcxproj", "{944CB352-A2A2-4B65-AB3B-18566D0ABFA2}"
 EndProject
@@ -15,8 +15,8 @@ Global
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{944CB352-A2A2-4B65-AB3B-18566D0ABFA2}.Debug|x64.ActiveCfg = Debug|x64
 		{944CB352-A2A2-4B65-AB3B-18566D0ABFA2}.Debug|x64.Build.0 = Debug|x64
-		{944CB352-A2A2-4B65-AB3B-18566D0ABFA2}.Debug|x86.ActiveCfg = Debug|Win32
-		{944CB352-A2A2-4B65-AB3B-18566D0ABFA2}.Debug|x86.Build.0 = Debug|Win32
+		{944CB352-A2A2-4B65-AB3B-18566D0ABFA2}.Debug|x86.ActiveCfg = Release|Win32
+		{944CB352-A2A2-4B65-AB3B-18566D0ABFA2}.Debug|x86.Build.0 = Release|Win32
 		{944CB352-A2A2-4B65-AB3B-18566D0ABFA2}.Release|x64.ActiveCfg = Release|x64
 		{944CB352-A2A2-4B65-AB3B-18566D0ABFA2}.Release|x64.Build.0 = Release|x64
 		{944CB352-A2A2-4B65-AB3B-18566D0ABFA2}.Release|x86.ActiveCfg = Release|Win32
@@ -24,5 +24,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3BFF1607-90DA-4748-B00A-69724D29C783}
 	EndGlobalSection
 EndGlobal

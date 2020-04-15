@@ -21,7 +21,7 @@ void genRandom(char *s, const int len) {
 ServerConfig::ServerConfig()
 {
 	LoadConfig();
-	LoadHubItems();
+	//LoadHubItems();
 }
 
 

@@ -96,6 +96,7 @@ void PPClientSession::ProcessIncommingMessage(u8* buffer, u32 size)
 		sendMessageWithCode(MSG_CODE_RESULT_AUTHENTICATION_SUCCESS);
 	}else
 	{
+		//sendMessageWithCode(MSG_CODE_RESULT_AUTHENTICATION_SUCCESS);
 		if (!_tmpMessage) _tmpMessage = new PPMessage();
 		if (_currentReadState == PPREQUEST_HEADER)
 		{
@@ -159,14 +160,6 @@ void PPClientSession::processMessageHeader(u8 code)
 {
 	switch (code)
 	{
-	//case MSG_CODE_REQUEST_START_SCREEN_CAPTURE:
-	//	std::cout << "Client send COMMAND: Start Stream" << std::endl;
-	//	_server->ScreenCapturer->startStream();
-	//	break;
-	//case MSG_CODE_REQUEST_STOP_SCREEN_CAPTURE:
-	//	std::cout << "Client send COMMAND: Stop Stream" << std::endl;
-	//	_server->ScreenCapturer->stopStream();
-	//	break;
 	case MSG_CODE_REQUEST_SCREEN_RECEIVED_FRAME: 
 
 		break;

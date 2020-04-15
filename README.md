@@ -1,46 +1,40 @@
-Note: this project no longer maintained
+Hello!
 
+I made a "patch" for PinBox - a homebrew for 3DS
 
-[![N|Solid](https://cdn.discordapp.com/attachments/340110838947905538/398531319048699905/test.png)](https://github.com/namkazt/PinBox)
+What included in this "patch":
+- added c-Stick callibration
+What functionality lost in this "patch":
+- screen capture not work anymore
 
-Welcome to Pinbox! Pinbox is a homebrew application (Soon .cia) for the Nintendo 3DS that streams content from your Windows PC to the 3DS. Keep in mind, Pinbox is currenty in alpha, so bugs will occur! Contact Namkazt on the Pinbox Discord for help. 
+# Known issues
+1) screen capture not work anymore
+2) your wifi access point should have internet connection, else connection will be unstable
+3) if 3ds not connecting to server or if no buttons work at all 
+- restart server and 3ds app, try restarting your pc and check your wifi
 
-https://discord.gg/9Qae7fT
-
-# Current Support
-- Streaming from Windows PC to a 3DS ( or over internet from VPS windows server )
-- Audio support (MP2 encode/decode)
-- Hardware acceleration Y2R
-- Emulation Xbox 360 Controller for awesome game support ( by ViGEm )
-- Support for Keyboard mapping with profile select from 3DS side
-- Realtime config from 3DS side
-
-#### Plans
--  Implement Qt UI for basic use
--  add Hub UI for fast access to game or app
- - Checker for wifi and sleepmode and other events relating to 3DS
-# Requirements to get Pinbox to run:
-* Visual C++ Redistributable for Visual Studio 2015
-https://goo.gl/ijdZ1x
-- Xbox 360 Accessories Software 1.2 (contains the missing device drivers)
-https://goo.gl/xPK8qE
-
-- Make sure Windows is up to date with the latest security patches and updates
-- Install the Virtual Game pad Emulation Framework
-https://goo.gl/qcuVbp
-- Keep in mind: The requirements to Pinbox may change, please check the #how-to-setup section of The Pinbox Discord Server first.
-
-#### Notes
-- Enable firewall to allow port 1234 in and out (or disable the firewall when using the software and enable the firewall when done)
-- Make sure both devices are connected to Wifi
-- You do not have to type in port 1234, this will crash the app
-- If you are getting a black screen in Pinbox, open server.cfg in the Pinbox server directory and change monitor index to zero
 # Installation
+1) Use latest release of PinBox from
+https://github.com/namkazt/PinBox
+2) Google and install "ViGEmBus_Setup_1.16.116" - or newer version if exist
+3) Download "Pinbox_Server_r0.2.4_patch_PinBoxServer_noScreen_Calibrated_cStick" 
+extract to "Pinbox_Server_r0.2.4_test1" folder
+and replace file "input.cfg" 
+4) run PinBoxServer_noScreen_Calibrated_cStick.exe
 
-Tutorial Video (Thanks to @GameInCanada): https://www.youtube.com/watch?v=Q-R2cy-vBgY
-# Troubleshooting
+# How to callibrate c-Stick
+1) open "input.cfg"
+You will see this - change values as you wish 
+(this is config for my new3ds, where c-Stick shifting "down" was unresponsive and I added plus 80 percent acceleraion on it)
 
-Please follow the instructions in the Pinbox Discord since the troubleshooting requirements are changing all the time and will be updated constantly.
+// c-stick calibration in percent - 
+//example - 
+//"20" -plus 20 percent power
+//"-20" - minus 20 percent power
 
-## If you are having issues don't hesitate to ask for help on our official Discord channel! 
-## https://discord.gg/9Qae7fT
+cStickUp = 50;
+cStickDown = 80;
+cStickRight = 50;
+cStickLeft = 50;
+
+2) restart server and 3ds client applications
